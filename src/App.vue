@@ -1,28 +1,29 @@
-<template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+<template lang="pug">
+v-app
+  v-toolbar(app='')
+    v-toolbar-title.headline.text-uppercase
+      span Vuetify
+      span.font-weight-light MATERIAL DESIGN
+    v-spacer
+    v-btn(flat='', href='https://github.com/vuetifyjs/vuetify/releases/latest', target='_blank')
+      span.mr-2 Latest Release
+      v-icon open_in_new
+  v-content
+    helloworld
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import HelloWorld from "./components/HelloWorld";
 
 export default {
-  name: 'app',
+  name: "App",
   components: {
     HelloWorld
+  },
+  data() {
+    return {
+      //
+    };
   }
-}
+};
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
