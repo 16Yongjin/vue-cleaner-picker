@@ -1,29 +1,27 @@
 <template lang="pug">
 v-app
-  v-toolbar(app='')
-    v-toolbar-title.headline.text-uppercase
-      span Vuetify
-      span.font-weight-light MATERIAL DESIGN
+  v-toolbar(app)
+    v-toolbar-title.headline
+      span 청소 인원 뽑기
     v-spacer
-    v-btn(flat='', href='https://github.com/vuetifyjs/vuetify/releases/latest', target='_blank')
-      span.mr-2 Latest Release
-      v-icon open_in_new
+    v-btn(icon flat @click="openDialog")
+      v-icon person_add
   v-content
-    helloworld
+    home-view
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld";
+import HomeView from './views/HomeView'
 
 export default {
-  name: "App",
+  name: 'App',
   components: {
-    HelloWorld
+    HomeView
   },
-  data() {
-    return {
-      //
-    };
+  methods: {
+    openDialog () {
+      this.$store.commit('updateDialog', true)
+    }
   }
-};
+}
 </script>
